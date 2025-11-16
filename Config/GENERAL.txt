@@ -80,7 +80,7 @@ CONFIG_PACKAGE_kmod-usb-storage-extras=n
 CONFIG_PACKAGE_kmod-usb-storage-uas=n
 CONFIG_PACKAGE_kmod-usb-uhci=n
 CONFIG_PACKAGE_kmod-usb-xhci=n
-CONFIG_PACKAGE_kmod-usb-roles=y
+CONFIG_PACKAGE_kmod-usb-roles=n
 
 # 组件调整 - 精简磁盘工具
 CONFIG_PACKAGE_autocore=y

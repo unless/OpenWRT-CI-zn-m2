@@ -78,6 +78,7 @@ UPDATE_PACKAGE "quickfile" "sbwml/luci-app-quickfile" "main"
 UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "luci-app-timewol luci-app-wolplus"
 UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "main"
+UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 
 #更新软件包版本
 UPDATE_VERSION() {

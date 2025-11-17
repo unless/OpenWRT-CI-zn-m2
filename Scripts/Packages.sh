@@ -1,9 +1,9 @@
 #!/bin/bash
 sed -i 's/kmod-fs-ext4 //g; s/kmod-fs-f2fs //g; s/f2fs-tools //g; s/kmod-usb3 //g; s/kmod-usb-dwc3-qcom //g; s/kmod-usb-dwc3 //g; s/automount //g' ../target/linux/qualcommax/Makefile
 cat ../target/linux/qualcommax/Makefile
-del ../feeds/luci/applications/luci-app-daed
+rm -r -f  ../feeds/luci/applications/luci-app-daed
 ls ../feeds/luci/applications/
-del ../feeds/packages/net/daed
+rm -r -f  ../feeds/packages/net/daed
 ls ../feeds/packages/net
 #安装和更新软件包
 UPDATE_PACKAGE() {

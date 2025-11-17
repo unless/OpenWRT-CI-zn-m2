@@ -1,10 +1,7 @@
 #!/bin/bash
 sed -i 's/kmod-fs-ext4 //g; s/kmod-fs-f2fs //g; s/f2fs-tools //g; s/kmod-usb3 //g; s/kmod-usb-dwc3-qcom //g; s/kmod-usb-dwc3 //g; s/automount //g' ../target/linux/qualcommax/Makefile
-cat ../target/linux/qualcommax/Makefile
 rm -r -f  ../feeds/luci/applications/luci-app-daed
-ls ../feeds/luci/applications/
 rm -r -f  ../feeds/packages/net/daed
-ls ../feeds/packages/net
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
@@ -51,7 +48,7 @@ UPDATE_PACKAGE() {
 
 # UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
 UPDATE_PACKAGE "argon" "sbwml/luci-theme-argon" "openwrt-24.10"
-UPDATE_PACKAGE "aurora" "eamonxg/luci-theme-aurora" "master"
+# UPDATE_PACKAGE "aurora" "eamonxg/luci-theme-aurora" "master"
 UPDATE_PACKAGE "kucat" "sirpdboy/luci-theme-kucat" "js"
 
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"

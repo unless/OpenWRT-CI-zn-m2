@@ -1,5 +1,19 @@
 #!/bin/bash
-sed -i 's/kmod-fs-ext4 //g; s/kmod-fs-f2fs //g; s/f2fs-tools //g; s/kmod-usb3 //g; s/kmod-usb-dwc3-qcom //g; s/kmod-usb-dwc3 //g; s/automount //g; s/e2fsprogs //g' ../target/linux/qualcommax/Makefile
+#sed -i 's/kmod-fs-ext4 //g; s/kmod-fs-f2fs //g; s/f2fs-tools //g; s/kmod-usb3 //g; s/kmod-usb-dwc3-qcom //g; s/kmod-usb-dwc3 //g; s/automount //g; s/e2fsprogs //g; s/kmod-ath11k //g; s/kmod-ath11k-ahb //g; s/kmod-ath11k-pci //g; s/kmod-qca-nss-drv-wifi-meshmgr \ //g' ../target/linux/qualcommax/Makefile
+sed -i \
+-e 's/kmod-fs-ext4 //g' \
+-e 's/kmod-fs-f2fs //g' \
+-e 's/f2fs-tools //g' \
+-e 's/kmod-usb3 //g' \
+-e 's/kmod-usb-dwc3-qcom //g' \
+-e 's/kmod-usb-dwc3 //g' \
+-e 's/automount //g' \
+-e 's/e2fsprogs //g' \
+-e 's/kmod-ath11k //g' \
+-e 's/kmod-ath11k-ahb //g' \
+-e 's/kmod-ath11k-pci //g' \
+-e 's|\tkmod-qca-nss-drv-wifi-meshmgr \\||g' \
+target/linux/qualcommax/Makefile
 rm -r -f  ../feeds/luci/applications/luci-app-daed
 #rm -r -f  ../feeds/packages/net/daed
 #安装和更新软件包

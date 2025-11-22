@@ -11,6 +11,7 @@ sed -i \
 -e 's/e2fsprogs //g' \
 -e 's/kmod-ath11k //g' \
 -e 's/kmod-ath11k-ahb //g' \
+-e 's/wpad-openssl //g' \
 -e 's/kmod-ath11k-pci //g' \
 -e 's|\tkmod-qca-nss-drv-wifi-meshmgr \\||g' \
 ../target/linux/qualcommax/Makefile

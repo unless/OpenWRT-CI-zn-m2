@@ -52,6 +52,7 @@ if [ -n "$hash_value" ] && [[ "$hash_value" =~ ^[0-9a-f]{32}$ ]]; then
     echo "$hash_value" > ./.vermagic
     echo "kernel内核md5校验码：$hash_value"
 	cat ./.vermagic
+	ls
 fi
 
 #高通平台调整

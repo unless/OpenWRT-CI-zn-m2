@@ -44,6 +44,15 @@ if [ -n "$WRT_PACKAGE" ]; then
 	echo -e "$WRT_PACKAGE" >> ./.config
 fi
 
+
+#修改内核校验码
+url_value=$(wget -qO- "https://downloads.immortalwrt.org/snapshots/targets/qualcommax/ipq60xx/kmods/")
+hash_value=${hash_value:-$(echo "$url_value" | sed -n 's/.*\([0-9a-f]\{32\}\)\/.*/\1/p' | tail -1)}
+if [ -n "$hash_value" ] && [[ "$hash_value" =~ ^[0-9a-f]{32}$ ]]; then
+    echo "$hash_value" > ./.vermagic
+    echo "kernel内核md5校验码：$hash_value"
+fi
+
 #高通平台调整
 DTS_PATH="./target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/"
 if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then

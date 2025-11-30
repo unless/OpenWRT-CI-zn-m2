@@ -45,14 +45,16 @@ if [ -n "$WRT_PACKAGE" ]; then
 fi
 
 
-#修改内核校验码
+#修改内核校验码 增加kmod源
 sed -i "s/grep '=\[ym]' \$(LINUX_DIR)\/\.config\.set | LC_ALL=C sort | \$(MKHASH) md5 > \$(LINUX_DIR)\/\.vermagic/[ -f \$(TOPDIR)\/\.vermagic ] \&\& cat \$(TOPDIR)\/\.vermagic > \$(LINUX_DIR)\/\.vermagic || &/" ./include/kernel-defaults.mk
-url_value=$(wget -qO- "https://downloads.immortalwrt.org/snapshots/targets/qualcommax/ipq60xx/kmods/")
-hash_value=${hash_value:-$(echo "$url_value" | sed -n 's/.*\([0-9a-f]\{32\}\)\/.*/\1/p' | tail -1)}
-if [ -n "$hash_value" ] && [[ "$hash_value" =~ ^[0-9a-f]{32}$ ]]; then
-    echo "$hash_value" > ./.vermagic
-    echo "kernel内核md5校验码：$hash_value"
-fi
+LAST_DIR=$(wget -qO- "https://downloads.immortalwrt.org/snapshots/targets/qualcommax/ipq60xx/kmods/" | grep -oE 'href="[0-9]+\.[0-9]+\.[0-9]+-[0-9]-[0-9a-f]{32}/"' | tail -1 | sed 's/href="//g; s/"//g; s/\/$//')
+HASH_VALUE=$(echo "$LAST_DIR" | grep -oE '[0-9a-f]{32}$')
+echo "$HASH_VALUE" > ./.vermagic
+echo "$HASH_VALUE"
+echo "$LAST_DIR"
+echo "https://downloads.immortalwrt.org/snapshots/targets/qualcommax/ipq60xx/kmods/$LAST_DIR/packages.adb" >> ./package/system/apk/files/customfeeds.list
+cat ./package/system/apk/files/customfeeds.list
+cat ./.vermagic
 
 #高通平台调整
 DTS_PATH="./target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/"

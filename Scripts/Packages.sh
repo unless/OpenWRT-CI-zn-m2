@@ -15,8 +15,8 @@ sed -i \
 -e 's/kmod-ath11k-pci //g' \
 ../target/linux/qualcommax/Makefile
 sed -i '/\tDEVICE_PACKAGES := ipq-wifi-zn_m2/d' ../target/linux/qualcommax/image/ipq60xx.mk
-# rm -r -f  ../feeds/luci/applications/luci-app-daed
-# rm -r -f  ../feeds/packages/net/daed
+rm -r -f  ../feeds/luci/applications/luci-app-daed
+rm -r -f  ../feeds/packages/net/daed
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
@@ -135,6 +135,7 @@ UPDATE_VERSION() {
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
+ls
 
 git -C ./luci-app-daed checkout ed6a28c
 #UPDATE_VERSION "tailscale"

@@ -17,7 +17,7 @@ sed -i \
 ../target/linux/qualcommax/Makefile
 sed -i '/\tDEVICE_PACKAGES := ipq-wifi-zn_m2/d' ../target/linux/qualcommax/image/ipq60xx.mk
 rm -r -f  ../feeds/luci/applications/luci-app-daed
-rm -r -f  ../feeds/packages/net/daed
+# rm -r -f  ../feeds/packages/net/daed
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
@@ -90,7 +90,7 @@ UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 # UPDATE_PACKAGE "quickfile" "sbwml/luci-app-quickfile" "main"
 UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "luci-app-timewol luci-app-wolplus"
 # UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
-UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
+UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master" "luci-app-daed"
 UPDATE_PACKAGE "v2ray-geodata" "unless/v2ray-geodata" "master"
 UPDATE_PACKAGE "luci-app-taskplan" "sirpdboy/luci-app-taskplan" "master"
 #更新软件包版本

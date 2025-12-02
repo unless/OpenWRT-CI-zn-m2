@@ -136,6 +136,5 @@ UPDATE_VERSION() {
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
 
-git -C ./package/dae checkout ed6a28c
-
+git -C ./luci-app-daed checkout ed6a28c
 #UPDATE_VERSION "tailscale"

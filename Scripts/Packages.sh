@@ -89,7 +89,7 @@ UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 # UPDATE_PACKAGE "quickfile" "sbwml/luci-app-quickfile" "main"
 # UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "luci-app-timewol luci-app-wolplus"
 # UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
-UPDATE_PACKAGE "daed" "unless/luci-app-daed" "main"
+UPDATE_PACKAGE "daed" "unless/luci-app-daed" "master"
 UPDATE_PACKAGE "v2ray-geodata" "unless/v2ray-geodata" "master"
 UPDATE_PACKAGE "luci-app-taskplan" "sirpdboy/luci-app-taskplan" "master"
 #更新软件包版本

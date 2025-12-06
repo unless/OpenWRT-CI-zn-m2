@@ -17,6 +17,8 @@ sed -i \
 sed -i '/\tDEVICE_PACKAGES := ipq-wifi-zn_m2/d' ../target/linux/qualcommax/image/ipq60xx.mk
 rm -r -f  ../feeds/luci/applications/luci-app-daed
 rm -r -f  ../feeds/packages/net/daed
+apt-get install -y clang-15 llvm-15 npm
+npm install -g pnpm
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
